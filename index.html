@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>WhichWay Web Navigation Spike</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>WhichWay Web Navigation Spike</h1>
+    <p class="sub">Test browser GPS + compass accuracy outdoors.</p>
+
+    <section class="card">
+      <h2>Target</h2>
+      <div class="grid">
+        <label>
+          Latitude
+          <input id="targetLat" type="number" step="any" placeholder="51.000000" />
+        </label>
+        <label>
+          Longitude
+          <input id="targetLon" type="number" step="any" placeholder="-0.000000" />
+        </label>
+      </div>
+      <div class="buttons">
+        <button id="useCurrentBtn">Use current location as target</button>
+        <button id="startBtn" class="primary">Start test</button>
+      </div>
+    </section>
+
+    <section class="card nav-card">
+      <div id="arrow" class="arrow">↑</div>
+      <div class="distance"><span id="distance">—</span> m</div>
+      <div class="status" id="status">Not started</div>
+    </section>
+
+    <section class="card">
+      <h2>Live telemetry</h2>
+      <div class="telemetry">
+        <div><span>Latitude</span><strong id="lat">—</strong></div>
+        <div><span>Longitude</span><strong id="lon">—</strong></div>
+        <div><span>GPS accuracy</span><strong id="accuracy">—</strong></div>
+        <div><span>Heading</span><strong id="heading">—</strong></div>
+        <div><span>Bearing to target</span><strong id="bearing">—</strong></div>
+        <div><span>Relative arrow</span><strong id="relative">—</strong></div>
+        <div><span>GPS update interval</span><strong id="interval">—</strong></div>
+        <div><span>Samples logged</span><strong id="samples">0</strong></div>
+      </div>
+      <div class="buttons">
+        <button id="downloadBtn">Download CSV</button>
+        <button id="clearBtn">Clear log</button>
+      </div>
+    </section>
+
+    <section class="card small">
+      <h2>Notes</h2>
+      <p>For the cleanest test, go outdoors with a clear view of the sky. Compare the same route against the Android POC on the same phone.</p>
+      <p>Compass support varies by browser/device. On iPhone, the browser may ask separately for motion/orientation permission.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
